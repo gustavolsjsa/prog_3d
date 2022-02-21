@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sol</title>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+    <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: sans-serif;
+        }
+
+        .fondo {
+            width: 100%;
+            height: 100%;
+            background: #000 url(./texturas/espacio.jpg)
+        }
+    </style>
+</head>
+
+<body>
+    <x3d class="fondo">
+        <scene>
+            <shape>
+                <appearance>
+                    <!-- <material diffuseColor="1 .5 0" /> -->
+                    <!-- atributo de color en RGB pero cada canal esta mapeado entre 0 a 1, cerramos en la misma etiqueta con la diagonal -->
+                    <!-- </material> -->
+
+                    <!-- para usar en cambio una textura, debemos quitar la etiqueta material con el color -->
+                    <imageTexture url="./texturas/csol.jpg">
+                </appearance>
+                <!-- primitivas en 3D -->
+                <!-- <box></box> -->
+                <!-- <cone></cone> -->
+                <sphere></sphere>
+            </shape>
+
+            <!-- INSERTAMOS  MERCURIO -->
+            <!-- nos sirve para mover, rotar, el Diametro default es de 2 metros-->
+            <transform translation="1.1 0 1.1" scale="0.1 0.1 0.1">
+                <!-- unidades en metros, XYZ -->
+                <Inline url="./mercurio.x3d" />
+            </transform>
+            <!-- INSERTAMOS  VENUS -->
+            <transform translation="-1.6 0 1.4" scale="0.2 0.2 0.2">
+                <Inline url="./venus.x3d" />
+            </transform>
+            <!-- INSERTAMOS  TIERRA -->
+            <transform translation="0.8 0 -1.8" scale="0.2 0.2 0.2">
+                <Inline url="./tierra.x3d" />
+            </transform>
+            <transform translation="1.2 0 -2.2" scale="0.07 0.07 0.07">
+                <Inline url="./luna.x3d" />
+            </transform>
+            <!-- INSERTAMOS  MARTE -->
+            <transform translation="-2 0 -2" scale="0.2 0.2 0.2">
+                <Inline url="./marte.x3d" />
+            </transform>
+            <!-- INSERTAMOS  JUPITER -->
+            <transform translation="2.3 0 0.3" scale="0.4 0.4 0.4">
+                <Inline url="./jupiter.x3d" />
+            </transform>
+            <!-- INSERTAMOS  ANILLOS -->
+            <transform translation="2.3 0 0.3" scale="0.3 0.3 0.3">
+                <Inline url="./anillos.x3d" />
+            </transform>
+            <!-- INSERTAMOS  URANO -->
+            <transform translation="-3.5 0 -0.1" scale="0.2 0.2 0.2">
+                <Inline url="./urano.x3d" />
+            </transform>
+            <!-- INSERTAMOS  NEPTUNO -->
+            <transform translation="3.8 0 -2.0" scale="0.2 0.2 0.2">
+                <Inline url="./neptuno.x3d" />
+            </transform>
+
+
+        </scene>
+    </x3d>
+</body>
+
+</html>
